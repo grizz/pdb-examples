@@ -10,7 +10,7 @@ pdb = peeringdb.PeeringDB()
 ix = pdb.all('ix', name='chix', country='us')[0]
 pprint(ix)
 
-# get  lan on ix
+# get lan on ix
 ixlan = pdb.all('ixlan', ix_id=ix['id'])[0]
 pprint(ixlan)
 
@@ -18,6 +18,7 @@ pprint(ixlan)
 net = pdb.all('net', asn=63311)[0]
 pprint(net)
 
+# lookup peer info by network and ixlan
 peerings = pdb.all('netixlan', ixlan_id=ixlan['id'], asn=63311)
 pprint(peerings)
 
